@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #333655;
+}
+.main-container {
+    background-color: #03141f;
+    max-width: 600px;
+    margin: 5px auto;
+    padding: 20px;
+}
+#titulo {
+    text-align: center;
+    color: #fff;
+}
+.estado {
+    background-color: #083a5c;
+    color: #ffffff;
+    padding: 10px;
+    margin: 10px 0;
+    white-space: pre-wrap;
+}
+.estado h3 {
+    border-left: 5px solid #ffffff;
+    padding-left: 10px;
+
+}
+h3 {
+    border-left: 5px solid #083a5c;
+    padding-left: 10px;
+}
+#recursosIniciales{
+    background-color: #ffffff;
+    border-top: 1px solid #083a5c;
+    padding: 10px;
+}
+.output {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    white-space: pre-wrap;
+    min-height: 100px;
+    color: #083a5c;
+    border-radius: 0 0 15px 15px;
+}
+.input {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    margin-top: 10px;
+    min-height: 120px;
+    border-radius: 15px 15px 0 0;
+}
+.button_container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    display: flex;
+}
+
+.button_1 {
+    padding: 10px;
+    border: 0;
+    width: 250px;
+    background-color: #083a5c;
+    color: #e0f7fa;
+}
+.button_1:hover {
+    background-color: #ffffff;
+    color: #083a5c;
+
+}
+.button_2 {
+    background-color: #fff;
+    color: #083a5c;
+    text-align: center;
+    width: 100%;
+    border: 0;
+    margin-top: 5px;
+    padding: 5px;
+
+}
+.button_2:hover {
+    background-color: #20587e;
+    color: #fff;
+}
+.boton-activo {
+    background-color: #083a5c;
+    color: #fff;
+}
+.doctores_1 img {
+    width: 200px;
+}
+footer {
+    background-color: rgba(159, 34, 66, 0.5);
+    margin: 20px;
+}
+footer .atribution {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 30px 10px;
+}
+
+footer .atribution img {
+    width: 50px;
+    height: 50px;
+    background-color: #9f2242;
+}
+
+footer .atribution p {
+    margin: 0;
+    color: #fff;
+}
