@@ -80,7 +80,7 @@ function evaluarDiferencia() {
             mensaje = `Escasez de ${key}:<br>Disponible: ${actualFormateado}<br>Requerido: ${minimoFormateado}<br>Faltante: ${faltanFormateado}.`;
             outputDiv.innerHTML += `<p style="border-left: 5px solid red; padding-left: 5px">${mensaje}</p><br>`;
         } else {
-            mensaje = `Suficiencia de ${key}:<br>Disponible: ${actualFormateado}<br>Requerido: ${minimoFormateado}<br>Sobre: ${sobranFormateado}.`;
+            mensaje = `Suficiencia de ${key}:<br>Disponible: ${actualFormateado}<br>Requerido: ${minimoFormateado}<br>Excedente: ${sobranFormateado}.`;
             outputDiv.innerHTML += `<p style="border-left: 5px solid green; padding-left: 5px">${mensaje}</p><br>`;
         }
     }
