@@ -9,22 +9,25 @@ function toggleRecursosIniciales() {
     const button = document.getElementById("mostrarRecursosIniciales");
 
     if (recursosDiv.style.display === "none") {
-        recursosDiv.style.display = "block"; // Mostrar el contenedor
-        mostrarRecursosIniciales(); // Llamar a la función para mostrar los recursos
-        button.innerText = "Ocultar Recursos Iniciales"; // Cambiar el texto del botón
+        recursosDiv.style.display = "block";
+        mostrarRecursosIniciales();
+        button.innerText = "Ocultar Recursos Iniciales";
+        button.classList.add("boton-activo");
     } else {
-        recursosDiv.style.display = "none"; // Ocultar el contenedor
-        button.innerText = "Mostrar Recursos Iniciales"; // Restaurar el texto del botón
+        recursosDiv.style.display = "none";
+        button.innerText = "Mostrar Recursos Iniciales";
+        button.classList.remove("boton-activo");
     }
 }
 
-// Función para mostrar los recursos iniciales introducidos
+
+// Mostrar recurdos iniciales
 function mostrarRecursosIniciales() {
     const recursosDiv = document.getElementById("recursosIniciales");
-    recursosDiv.innerHTML = "<h3>Recursos Iniciales</h3>";  // Título
+    recursosDiv.innerHTML = "<h3>Recursos Iniciales</h3>";
     for (const [key, value] of Object.entries(recursos.iniciales)) {
-        const valorFormateado = value.toLocaleString();  // Formatear el número con comas
-        recursosDiv.innerHTML += `<p>${key}: ${valorFormateado}</p>`; // Mostrar el recurso
+        const valorFormateado = value.toLocaleString();
+        recursosDiv.innerHTML += `<p>${key}: ${valorFormateado}</p>`;
     }
 }
 
@@ -34,7 +37,7 @@ function actualizarEstado() {
 
     estadoDiv.innerHTML = "<h3>Estado Actual de los Recursos</h3>";
     for (const [key, value] of Object.entries(recursos.actuales)) {
-        const valorFormateado = value.toLocaleString();  // Formatear el número con comas
+        const valorFormateado = value.toLocaleString();
         estadoDiv.innerHTML += `<p>${key} : ${valorFormateado}</p>`;
     }
 }
@@ -83,7 +86,7 @@ function evaluarDiferencia() {
     }
 }
 
-// Muestra un formulario para registrar consumo
+// Formulario consumo
 function registrarConsumo() {
     const inputDiv = document.getElementById("input");
     inputDiv.innerHTML = "<h3>Registrar Consumo Diario</h3>";
@@ -92,8 +95,6 @@ function registrarConsumo() {
     }
     inputDiv.innerHTML += '<button onclick="guardarConsumo()">Guardar</button>';
 }
-
-// Guarda el consumo diario y actualiza los recursos
 function guardarConsumo() {
     for (const key in recursos.actuales) {
         const consumo = parseFloat(document.getElementById(key).value) || 0;
@@ -104,7 +105,7 @@ function guardarConsumo() {
     actualizarEstado();
 }
 
-// Muestra un formulario para sumar inventario
+// Formulario suma
 function sumarInventario() {
     const inputDiv = document.getElementById("input");
     inputDiv.innerHTML = "<h3>Sumar Inventario Entrante</h3>";
@@ -113,8 +114,6 @@ function sumarInventario() {
     }
     inputDiv.innerHTML += '<button onclick="guardarInventario()">Guardar</button>';
 }
-
-// Guarda el inventario sumado y actualiza los recursos
 function guardarInventario() {
     for (const key in recursos.actuales) {
         const suma = parseFloat(document.getElementById(key).value) || 0;
@@ -124,11 +123,9 @@ function guardarInventario() {
     actualizarEstado();
 }
 
-// Asigna las funciones a los botones
 document.getElementById("registrarRecursos").onclick = registrarRecursos;
 document.getElementById("evaluarDiferencia").onclick = evaluarDiferencia;
 document.getElementById("registrarConsumo").onclick = registrarConsumo;
 document.getElementById("sumarInventario").onclick = sumarInventario;
 
-// Muestra el estado inicial al cargar la página
 actualizarEstado();
