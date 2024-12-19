@@ -88,7 +88,8 @@ h3 {
     color: #fff;
 }
 .doctores_1 img {
-    width: 200px;
+    width: 90%;
+    padding: 5%;
 }
 footer {
     background-color: rgba(159, 34, 66, 0.5);
