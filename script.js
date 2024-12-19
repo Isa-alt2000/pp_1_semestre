@@ -1,9 +1,9 @@
 const recursos = {
-    minimos: { presupuesto: 500000, personal: 200, insumos_primer_grado: 5000, insumos_segundo_grado: 10000 },
-    iniciales: { presupuesto: 0, personal: 0, insumos_primer_grado: 0, insumos_segundo_grado: 0 },
-    actuales: { presupuesto: 0, personal: 0, insumos_primer_grado: 0, insumos_segundo_grado: 0 }
+    minimos: { camas: 60, personal_medico: 267, otro_personal: 257, medicamentos: 5000, instrumental_medico: 10000 },
+    iniciales: { camas: 0, personal_medico: 0, otro_personal: 0, medicamentos: 0, instrumental_medico: 0 },
+    actuales: { camas: 0, personal_medico: 0, otro_personal: 0, medicamentos: 0, instrumental_medico: 0 }
 };
-// Función para alternar la visibilidad del div de recursos iniciales
+// div rec iniciales
 function toggleRecursosIniciales() {
     const recursosDiv = document.getElementById("recursosIniciales");
     const button = document.getElementById("mostrarRecursosIniciales");
@@ -31,7 +31,7 @@ function mostrarRecursosIniciales() {
     }
 }
 
-//contenedor fijo
+//div fijo actualizable
 function actualizarEstado() {
     const estadoDiv = document.getElementById("estado");
 
@@ -42,7 +42,7 @@ function actualizarEstado() {
     }
 }
 
-//formulario de registro de recursos
+//formulario rec iniciales
 function registrarRecursos() {
     const inputDiv = document.getElementById("input");
     inputDiv.innerHTML = "<h3>Registrar Recursos Iniciales</h3>";
@@ -52,7 +52,7 @@ function registrarRecursos() {
     inputDiv.innerHTML += '<button onclick="guardarRecursos()">Guardar</button>';
 }
 
-//guarda los iniciales y actualiza los actuales
+//guardar iniciales y acualizar actuales
 function guardarRecursos() {
     for (const key in recursos.iniciales) {
         const value = parseFloat(document.getElementById(key).value) || 0;
@@ -63,7 +63,7 @@ function guardarRecursos() {
     actualizarEstado();
 }
 
-// Evalúa las diferencias entre los recursos actuales y los mínimos
+// diferencias entrerecursos actuales y mínimos
 function evaluarDiferencia() {
     const outputDiv = document.getElementById("output");
     outputDiv.innerHTML = "<h3> Evaluación de Diferencias </h3>";
